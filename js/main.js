@@ -4,12 +4,12 @@ const openMenu = document.getElementById("mobile-menu");
 const main = document.getElementById("main");
 
 botonOpenMenu.addEventListener("click", () => {
+    main.classList.add("disabled");
     openMenu.classList.remove("disabled");
-    main-classList.add("disabled");
 });
 
 botonCloseMenu.addEventListener("click", ()=>{
     openMenu.classList.add("disabled");
-    main-classList.remove("disabled");
+    main.classList.remove("disabled");
 })
 
