@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+
+
+
+/************************* VARIABLES ******************************/
+:root {
+    /* COLORES */
+    --black: hsl(0, 0%, 0%);
+    --white: hsl(0, 0%, 100%);
+    --dark-gray: hsl(0, 0%, 55%);
+    --very-dark-gray: hsl(0, 0%, 41%);
+    /* FONTS */
+    --text: 'Alata', sans-serif;
+    --titles: 'Josefin Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+p, .btn {
+    font-family: var(--text);
+}
+
+
+h2,
+.hero__content,
+.mobile-menu_nav {
+    font-family: var(--titles);
+    text-transform: uppercase;
+}
+
+.mobile-menu,
+.desktop-menu {
+    display: none;
+}
+
+.hero {
+    background-image: url("../images/mobile/image-hero.jpg");
+    background-size: cover;
+    min-height: 80vh;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 10rem;
+}
+
+.open-menu,
+.close-menu {
+    border: 0;
+    background-color: transparent;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.hero__content {
+
+    /*por ser un hijo con flexbox al agregar flex-grow 1 ocupa todo el div, luego aplicamos flexbox asi podemos manipular el contenido*/
+    flex-grow: 1;
+    display: flex;
+    /*centra en */
+    align-items: center;
+}
+
+.hero__content p {
+    color: var(--white);
+    font-size: 2rem;
+    border: solid 1px var(--white);
+    padding: 1.5rem;
+}
+
+.mobile-menu {
+
+    display: flex;
+    flex-direction: column;
+    background-color: var(--black);
+    position: fixed;
+    /*  top: 0;
+    left:0;
+    right:0;
+    bottom: 0; */
+    /*tambien lo podemos reemplazar solo por inset*/
+    inset: 0;
+
+    padding: 2rem;
+}
+
+.mobile-menu_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-menu_nav {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+
+}
+
+.mobile-menu_nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5.3rem;
+
+}
+
+.mobile-menu_nav ul li a {
+    color: var(--white);
+    font-size: 2.5rem;
+}
+
+
+main {
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.intro_info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.intro_info p {
+    font-size: .75rem;
+    color: var(--dark-gray);
+    line-height: 1.7;
+    padding: 2rem;
+}
+
+.creations {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+
+
+.creations>h2 {
+    text-align: center;
+}
+
+
+
+.creation__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.creation__grid>div {
+    
+    height: 6rem;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-end;
+    line-height: 1.1;
+    background-size: cover;
+
+    /*esto se pone para que funcione el before de abajo y asi poder oscurecer*/
+    position: relative;
+    isolation:isolate;
+
+}
+
+/*ESTUDIAR QUE ES BEFORE, todo esto se hace para oscurecer las imagenes*/
+.creation__grid>div>h2::before{
+    content: '';
+    position: absolute;
+    /*tambien se podria usar "inset: 0" */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.3);
+    z-index: -1;
+}
+
+
+.creation__grid>div>h2 {
+    color: var(--white);
+    font-size: 1.1rem;
+}
+
+
+.creation__grid>div:nth-child(1){
+    background-image: url(../images/mobile/image-deep-earth.jpg);
+}
+.creation__grid>div:nth-child(2){
+    background-image: url(../images/mobile/image-night-arcade.jpg);
+    
+}
+.creation__grid>div:nth-child(3){
+    background-image: url(../images/mobile/image-soccer-team.jpg);
+}
+.creation__grid>div:nth-child(4){
+    background-image: url(../images/mobile/image-grid.jpg);
+}
+.creation__grid>div:nth-child(5){
+    background-image: url(../images/mobile/image-from-above.jpg);
+
+}
+.creation__grid>div:nth-child(6){
+    background-image: url(../images/mobile/image-pocket-borealis.jpg);
+}
+.creation__grid>div:nth-child(7){
+    background-image: url(../images/mobile/image-curiosity.jpg);
+}
+.creation__grid>div:nth-child(8){
+    background-image: url(../images/mobile/image-fisheye.jpg);
+}
+
+
+.btn{
+    border: 1px solid var(--black);
+    width: max-content;
+    padding: .5rem 3rem;
+    text-transform: uppercase;
+    background-color: transparent;
+    letter-spacing: .3rem;
+}
+
+
+.footer {
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+}
+
+
+.logo-menu,
+.icons-copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-menu{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-menu li a {
+    font-family: var(--text);
+    color: var(--white);
+    font-size: .9rem;
+}
+
+
+
+.icons{
+    display: flex;
+    gap: 1rem;
+}
+
+.copyright {
+    font-size: .75rem;
+    color: var(--dark-gray);
+}
+
+
+
+.disabled {
+    display: none;
+}
