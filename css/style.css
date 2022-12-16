@@ -24,7 +24,8 @@ a {
     text-decoration: none;
 }
 
-p, .btn {
+p,
+.btn {
     font-family: var(--text);
 }
 
@@ -180,7 +181,7 @@ main {
 }
 
 .creation__grid>div {
-    
+
     height: 6rem;
     padding: 1rem;
     display: flex;
@@ -190,12 +191,12 @@ main {
 
     /*esto se pone para que funcione el before de abajo y asi poder oscurecer*/
     position: relative;
-    isolation:isolate;
+    isolation: isolate;
 
 }
 
 /*ESTUDIAR QUE ES BEFORE, todo esto se hace para oscurecer las imagenes*/
-.creation__grid>div>h2::before{
+.creation__grid>div>h2::before {
     content: '';
     position: absolute;
     /*tambien se podria usar "inset: 0" */
@@ -203,7 +204,7 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0, 0, 0, .3);
     z-index: -1;
 }
 
@@ -214,35 +215,42 @@ main {
 }
 
 
-.creation__grid>div:nth-child(1){
+.creation__grid>div:nth-child(1) {
     background-image: url(../images/mobile/image-deep-earth.jpg);
 }
-.creation__grid>div:nth-child(2){
+
+.creation__grid>div:nth-child(2) {
     background-image: url(../images/mobile/image-night-arcade.jpg);
-    
+
 }
-.creation__grid>div:nth-child(3){
+
+.creation__grid>div:nth-child(3) {
     background-image: url(../images/mobile/image-soccer-team.jpg);
 }
-.creation__grid>div:nth-child(4){
+
+.creation__grid>div:nth-child(4) {
     background-image: url(../images/mobile/image-grid.jpg);
 }
-.creation__grid>div:nth-child(5){
+
+.creation__grid>div:nth-child(5) {
     background-image: url(../images/mobile/image-from-above.jpg);
 
 }
-.creation__grid>div:nth-child(6){
+
+.creation__grid>div:nth-child(6) {
     background-image: url(../images/mobile/image-pocket-borealis.jpg);
 }
-.creation__grid>div:nth-child(7){
+
+.creation__grid>div:nth-child(7) {
     background-image: url(../images/mobile/image-curiosity.jpg);
 }
-.creation__grid>div:nth-child(8){
+
+.creation__grid>div:nth-child(8) {
     background-image: url(../images/mobile/image-fisheye.jpg);
 }
 
 
-.btn{
+.btn {
     border: 1px solid var(--black);
     width: max-content;
     padding: .5rem 3rem;
@@ -251,6 +259,9 @@ main {
     letter-spacing: .3rem;
 }
 
+.btn-desktop {
+    display: none;
+}
 
 .footer {
     background-color: var(--black);
@@ -271,7 +282,7 @@ main {
     gap: 1rem;
 }
 
-.footer-menu{
+.footer-menu {
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -286,7 +297,7 @@ main {
 
 
 
-.icons{
+.icons {
     display: flex;
     gap: 1rem;
 }
@@ -296,6 +307,166 @@ main {
     color: var(--dark-gray);
 }
 
+
+
+@media screen and (min-width: 800px) {
+    .hero {
+        background-image: url("../images/desktop/image-hero.jpg");
+        padding: 2rem 6rem;
+    }
+
+    .hero__content p {
+        font-size: 3rem;
+        font-weight: 500;
+
+    }
+
+    .open-menu {
+        display: none;
+    }
+
+
+    .desktop-menu {
+        display: block;
+    }
+
+    .desktop-menu ul {
+        list-style-type: none;
+        display: flex;
+        gap: 2rem;
+        font-family: var(--text)
+    }
+
+    .desktop-menu ul a {
+        color: var(--white);
+        font-size: 0.9rem;
+    }
+
+    main {
+        padding: 6rem 8rem;
+    }
+
+
+    .intro {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+
+    }
+
+    .intro>img {
+        /*para que no vaya mas alla de su celda max-width*/
+        max-width: 100%;
+        grid-column: 1/6;
+        grid-row: 1/3;
+    }
+
+    .intro_info {
+        grid-column: 5/9;
+        grid-row: 2/3;
+        background-color: var(--white);
+        padding: 5rem;
+        text-align: left;
+        padding-bottom: 0;
+    }
+
+    .intro_info p {
+        padding: 0;
+    }
+
+
+
+    .btn-mobile {
+        display: none;
+    }
+
+
+    .btn-desktop {
+        display: block;
+    }
+
+    .creations_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .creations h2 {
+        font-size: 2.5rem;
+    }
+
+    .creation__grid>div:nth-child(1) {
+        background-image: url(../images/desktop/image-deep-earth.jpg);
+    }
+
+    .creation__grid>div:nth-child(2) {
+        background-image: url(../images/desktop/image-night-arcade.jpg);
+
+    }
+
+    .creation__grid>div:nth-child(3) {
+        background-image: url(../images/desktop/image-soccer-team.jpg);
+    }
+
+    .creation__grid>div:nth-child(4) {
+        background-image: url(../images/desktop/image-grid.jpg);
+    }
+
+    .creation__grid>div:nth-child(5) {
+        background-image: url(../images/desktop/image-from-above.jpg);
+
+    }
+
+    .creation__grid>div:nth-child(6) {
+        background-image: url(../images/desktop/image-pocket-borealis.jpg);
+    }
+
+    .creation__grid>div:nth-child(7) {
+        background-image: url(../images/desktop/image-curiosity.jpg);
+    }
+
+    .creation__grid>div:nth-child(8) {
+        background-image: url(../images/desktop/image-fisheye.jpg);
+    }
+
+
+    .creation__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+
+    .creation__grid>div {
+        height: 25rem;
+    }
+
+    .creation__grid>div>h2 {
+        font-size: 1.75rem;
+    }
+
+
+
+    .footer {
+        flex-direction: row;
+        padding: 3rem 8rem;
+        justify-content: space-between;
+    }
+
+    .footer-menu {
+        flex-direction: row;
+    }
+
+    .logo-menu {
+        align-items: flex-start;
+    }
+
+
+    .icons-copyright {
+        align-items: flex-end;
+    }
+
+
+}
 
 
 .disabled {
